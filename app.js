@@ -9,7 +9,7 @@ const mongoose = require('mongoose')
 const PORT = process.env.PORT || 5000
 const db = mongoose.connection
 
-const homepageRouter = require('./routes/homepage')
+const userRouter = require('./routes/user')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -25,6 +25,6 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
 
-app.use('/', homepageRouter)
+app.use('/', userRouter)
 app.listen(PORT)
 console.log('Starting on port: ' + PORT)
