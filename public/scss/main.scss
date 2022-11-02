@@ -1,0 +1,30 @@
+@import url('http://fonts.cdnfonts.com/css/garet');
+
+/*
+MAIN COLORS:
+  Main: #D8D9CF
+  Secondary: #f2dfd7
+  Tertiary: #2d446e
+  Fourth: #65aa92
+  Fiftg: #e77965
+*/
+//NOTE!! CUSTOMIZED THEME COLORS, STILL HALF OF IT IS STILL BASED ON DEFAULT
+$theme-colors:(
+  "primary":    #D8D9CF,
+  "secondary":  #f2dfd7,
+  "tertiary":   #2d446e,
+  "fourth":     #65aa92,
+  "fifth":      #e77965,
+  "success":    #198754,
+  "info":       #0dcaf0,
+  "warning":    #ffc107,
+  "danger":     #dc3545,
+  "light":      #fff,
+  "dark":       #212121
+);
+$font-family-sans-serif: Garet;
+$body-bg: #EDEDED;
+$body-color: #3f3d56;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
