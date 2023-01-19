@@ -1,1 +1,99 @@
-<h1>Library</h1>
+<div class="container-fluid mx-0 px-0" 
+    style="margin-top: 15vh;">
+  <section>
+    <h1>LIBRARY</h1>
+  </section>
+  <section>
+    <div class="container text-center">
+      <div class="row border">
+        <div class="col-lg-4">
+          <!--Title search-->
+          <div>
+            <h1>Search bar</h1>
+              <form action="/library" method="get">
+                <label>Search title</label>
+                <input type="text" name="title" value="<%=searchOptions.title%>">
+                <button type="submit">Search</button>
+              </form>
+          </div>
+          <!--Author search-->
+          <div>
+            <h1>Author search</h1>
+          </div>
+          
+          <!--Sort section-->
+          <div>
+            <h1>Filter</h1>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <!--Genre-->
+              <div class="accordion-item mb-2 border">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Genre
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body text-center">
+                    <h5>This should be loop the list of genres.</h5>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Genre 1
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Genre 2
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Rating-->
+              <div class="accordion-item mb-2 border">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Rating
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <label for="customRange3" class="form-label">Ratings</label>
+                    <input type="range" class="form-range" min="1" max="5" step="0.1" id="customRange3">
+                    <h5>Add indicator</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--List section-->
+        <div class="col-lg-8 border-start">
+          <div>
+            <h1>List:</h1>
+          </div>
+          <div class="row">
+            <% books.forEach(book => { %>
+            <div class="col-sm-6 col-lg-4 mb-4  ">
+              <div class="card text-center">
+                <img src="img/small-logo.svg" alt="">
+                <div class="card-body">
+                  <h1 class="card-title py-0 my-0"> <%= book.title %></h1>
+                  <h4 class="card-author py-0 my-0"> <%=book.author %> </h4>
+                  <p> <%=book.rating %>/5</p>
+                  <div class="d-flex justify-content-around border-top">
+                    <a href="#" class="text-decoration-none text-reset pt-2 mt-2"> Add</a>
+                    <a href="#" class="btn btn-primary mt-2">View</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %> 
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

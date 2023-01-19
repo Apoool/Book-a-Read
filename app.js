@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000
 const db = mongoose.connection
 
 const userRouter = require('./routes/user')
-const adminRouter = require('./routes/admin')
+// Try to add it later const adminRouter = require('./routes/admin')
 
 app.set('view engine', 'ejs')
 app.set('layout', 'layouts/layout')
@@ -28,7 +28,7 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
 app.use('/', userRouter)
-app.use('/admin', adminRouter)
+// Add it later app.use('/admin', adminRouter)
 
 try{
   app.listen(PORT)
